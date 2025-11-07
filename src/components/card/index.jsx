@@ -1,6 +1,9 @@
 import "./style.css";
 import React from "react";
 
+
+//template reutilizável para desenvolvimento e manutenção dos cards
+
 export function Card({ title, description, image }) {
   return (
     <article className="card-container" aria-label={title}>
