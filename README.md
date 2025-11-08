@@ -1,4 +1,4 @@
-Este projeto é Muito simples, mas com ideias de ouro! Ele tem o objetivo de desenvolver habilidades
+Este projeto é Muito simples, mas com ideias de ouro! Eu o criei com o propósito de desenvolver habilidades
 relacionadas a criação de componentes cards, uso de props para agregar objetos
 do data.js e responsividade SEM O USO de @media query.
 
