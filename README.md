@@ -31,6 +31,7 @@ O componente suporta três variantes visuais (`featured`, `default`, `compact`),
 - **Design tokens** — cores, tipografia e espaçamento centralizados em variáveis CSS no `App.css`
 - **Barrel export** — imports limpos via `index.ts`
 - **Hook customizado** — lógica de dados isolada no `useCards`, separada do componente visual
+- **Responsividade** — layout em grid que se adapta automaticamente ao tamanho da tela. Em desktop exibe 3 colunas na variante `default` e 2 na `compact`; em telas menores que 640px todas as variantes colapsam para coluna única, sem breakpoints manuais — usando `auto-fill` com `minmax` para o grid se reorganizar naturalmente
 
 ---
 
@@ -123,6 +124,9 @@ A escolha foi intencional: demonstrar domínio de CSS com variáveis, seletores 
 
 **Por que barrel export?**
 Centralizar os exports no `index.ts` garante que quem importa o componente nunca precise conhecer a estrutura interna de arquivos. É uma convenção amplamente adotada em design systems e bibliotecas de componentes.
+
+**Por que `auto-fill` com `minmax` em vez de breakpoints fixos?**
+Em vez de definir manualmente `@media (max-width: 768px)` para cada variante, o grid usa `repeat(auto-fill, minmax(280px, 1fr))` — o próprio navegador calcula quantas colunas cabem no espaço disponível. O resultado é um layout que se adapta a qualquer largura de tela sem uma linha de media query, exceto para o colapso final em mobile abaixo de 640px.
 
 ---
 
