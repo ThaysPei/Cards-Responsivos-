@@ -1,0 +1,188 @@
+.card__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+ 
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-border-hover);
+}
+ 
+/* Focus visible — acessibilidade por teclado */
+.card[role='button']:focus-visible,
+.card__link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-lg);
+}
+ 
+.card[role='button'] {
+  cursor: pointer;
+}
+ 
+/* ===========================
+   Image
+   =========================== */
+ 
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+ 
+.card--compact .card__image-wrapper {
+  aspect-ratio: 3 / 1;
+}
+ 
+.card--featured .card__image-wrapper {
+  aspect-ratio: 16 / 7;
+}
+ 
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+ 
+.card:hover .card__image {
+  transform: scale(1.04);
+}
+ 
+/* ===========================
+   Badge
+   =========================== */
+ 
+.card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--badge-color, #3b82f6);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+ 
+/* ===========================
+   Body
+   =========================== */
+ 
+.card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+ 
+.card--compact .card__body {
+  padding: 1rem;
+}
+ 
+.card--featured .card__body {
+  padding: 1.5rem;
+}
+ 
+.card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+ 
+.card--featured .card__title {
+  font-size: 1.2rem;
+}
+ 
+.card--compact .card__title {
+  font-size: 0.9rem;
+}
+ 
+.card__description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+ 
+  /* Truncar após 3 linhas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+ 
+/* ===========================
+   Footer
+   =========================== */
+ 
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  gap: 0.5rem;
+}
+ 
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.card__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+ 
+.card__avatar--placeholder {
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.card__author-name {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+ 
+.card__date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+ 

@@ -1,0 +1,174 @@
+/* ===========================
+   Design Tokens
+   =========================== */
+ 
+:root {
+  /* Colors */
+  --color-bg: #0a0a0f;
+  --color-surface: #13131a;
+  --color-border: #1e1e2e;
+  --color-border-hover: #2e2e4e;
+  --color-accent: #6366f1;
+ 
+  /* Text */
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #9090aa;
+  --color-text-muted: #55556a;
+ 
+  /* Skeleton */
+  --color-skeleton-base: #1a1a28;
+  --color-skeleton-highlight: #22223a;
+ 
+  /* Shadows */
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.1);
+ 
+  /* Radius */
+  --radius-lg: 12px;
+ 
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+ 
+/* ===========================
+   Reset & Base
+   =========================== */
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+ 
+/* ===========================
+   App Layout
+   =========================== */
+ 
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+ 
+/* ===========================
+   Header
+   =========================== */
+ 
+.app__header {
+  padding: 5rem 0 3.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 3rem;
+}
+ 
+.app__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+ 
+.app__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+ 
+.app__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  line-height: 1.6;
+}
+ 
+/* ===========================
+   Sections
+   =========================== */
+ 
+.app__main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+ 
+.app__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+ 
+.app__section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+ 
+/* ===========================
+   Card Grids
+   =========================== */
+ 
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+ 
+.card-grid--featured {
+  grid-template-columns: 1fr;
+}
+ 
+.card-grid--default {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+ 
+.card-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+ 
+/* ===========================
+   Error state
+   =========================== */
+ 
+.app__error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem;
+}
+ 
+/* ===========================
+   Responsive
+   =========================== */
+ 
+@media (max-width: 640px) {
+  .card-grid--default,
+  .card-grid--compact {
+    grid-template-columns: 1fr;
+  }
+ 
+  .app__header {
+    padding: 3rem 0 2.5rem;
+  }
+}
