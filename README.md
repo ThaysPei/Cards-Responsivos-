@@ -2,7 +2,7 @@
 
 Componente React modular com variantes, skeleton loading e acessibilidade — construído com TypeScript, Vite e CSS puro.
 
-![Preview do projeto](./preview.png)
+![Preview do projeto](./preview.jpeg)
 
 ---
 
