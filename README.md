@@ -134,5 +134,5 @@ Em vez de definir manualmente `@media (max-width: 768px)` para cada variante, o 
 
 **Thays Peixoto** — Desenvolvedora Front-end
 
-[GitHub](https://github.com/ThaysPei) · [LinkedIn](https://www.linkedin.com/in/thays-peixoto-da-silva/)) · [Medium](https://medium.com/@thabysilva12)
+[GitHub](https://github.com/ThaysPei) · [LinkedIn](https://www.linkedin.com/in/thays-peixoto-da-silva/) · [Medium](https://medium.com/@thabysilva12)
 
